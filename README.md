@@ -62,7 +62,7 @@ App.sln
 
 ## 🛠️ Implementation Notes
 
-- Commands are parsed in `Program.cs → Handle(List<string> inputs)`.
+- Commands are parsed in `Program.cs → Handle(List<int> arr, int i)`.
 - Extend the `Handle` method to implement actual business logic.
 - State can be maintained via static dictionaries or service classes.
 
