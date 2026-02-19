@@ -8,24 +8,20 @@ public class InputHandler
             * in the format: dotnet run "<array> | i"        *
             ***********************************************
         */
-
         if (args.Length == 0)
         {
             throw new ArgumentException("No command line arguments passed.");
         }
-
         var rawInput = args[0];
-        var parts = rawInput.Trim().Split([" | "], StringSplitOptions.None);
-
+        var parts = rawInput.Split('|');
         if (parts.Length < 2)
         {
-            return ([], 0);
+           throw new ArgumentException("Input string must contain '|' separator.");
         }
-        var arrStr = parts[0];
-        var i = int.Parse(parts[1].Trim());
-        var arr = arrStr.Split([','], StringSplitOptions.RemoveEmptyEntries)
+        var times = parts[0].Trim().Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                             .Select(x => int.Parse(x.Trim()))
                             .ToList();
-        return (arr, i);
+        var w = int.Parse(parts[1].Trim());
+        return (times, w);
     }
 }
