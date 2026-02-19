@@ -47,6 +47,6 @@ class Program
         // Print full list
         Console.WriteLine("arr: " + string.Join(", ", arr));
         // TODO: Add your core logic here
-        Console.WriteLine("No feasible order group.");
+        Console.WriteLine("Method Not Implemented.");
     }
 }
